@@ -8,7 +8,12 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 app = Flask(__name__)
 app.secret_key = 'muhammad farhan simatupang docker project'
-engine = create_engine("mysql+pymysql://root:1234@localhost:3308/userlogin")
+app.config["MYSQL_ROOT_PASSWORD"]='1234'
+# app.config["MYSQL_ROOT_DATABASE_URL"]='mysql+pymysql://root:@localhost:3306/userlogin'
+app.config["MYSQL_USER"]='farhan'
+app.config["MYSQL_PASSWORD"]='farhan2001'
+
+engine = create_engine("mysql+pymysql://root:@localhost:3306/userlogin")
 # engine = create_engine(" mysql+pymysql://root@localhost/userslogin ")
 db = scoped_session(sessionmaker(bind=engine))
 
