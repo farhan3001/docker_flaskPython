@@ -1,0 +1,1 @@
+CREATE TABLE users (username CHAR(255) NOT NULL, email CHAR(255) NOT NULL, password CHAR(255) NOT NULL);
